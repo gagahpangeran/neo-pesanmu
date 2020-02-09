@@ -1,0 +1,16 @@
+{
+  "name": "shinobu",
+  "version": "0.0.1",
+  "description": "backend service for neo pesanmu",
+  "main": "src/index.js",
+  "repository": "https://github.com/gagahpangeran/neo-pesanmu",
+  "author": "GPR <gagahpangeran@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
