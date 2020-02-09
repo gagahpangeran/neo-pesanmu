@@ -1,10 +1,4 @@
-const express = require("express");
-const app = express();
+const { PORT } = require("./config/const");
+const server = require("./server");
 
-const PORT = 9000;
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
