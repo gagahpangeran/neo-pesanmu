@@ -16,5 +16,15 @@ export default function Messages() {
     return <>Error</>;
   }
 
-  return <div>Halo</div>;
+  return (
+    <div>
+      {data.message.map(({ id, from, to, message }) => (
+        <ul key={id}>
+          <li>From : {from}</li>
+          <li>To : {to}</li>
+          <li>Message : {message}</li>
+        </ul>
+      ))}
+    </div>
+  );
 }
