@@ -13,7 +13,7 @@ const addMessage = async ({ from, to, message }) => {
 
 const getMessage = async () => {
   try {
-    const messages = await MessageModel.find({});
+    const messages = await MessageModel.find({}).sort({ createdAt: "desc" });
     return messages;
   } catch (e) {
     console.log(e);
