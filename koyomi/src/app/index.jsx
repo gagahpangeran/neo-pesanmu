@@ -1,12 +1,16 @@
 import React from "react";
+import { ApolloProvider } from "@apollo/react-hooks";
 
+import ApolloClient from "../utils/apollo";
 import Form from "../components/Form";
+import Messages from "../components/Messages";
 
 function App() {
   return (
-    <React.Fragment>
+    <ApolloProvider client={ApolloClient}>
       <Form />
-    </React.Fragment>
+      <Messages />
+    </ApolloProvider>
   );
 }
 
