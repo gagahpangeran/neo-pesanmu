@@ -5,19 +5,19 @@ import { useMutation, useQuery } from "@apollo/react-hooks";
 import { ADD_MESSAGE, GET_MESSAGE } from "../gql/message.graphql";
 
 export default function Form() {
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, reset } = useForm();
 
   const [addMessage] = useMutation(ADD_MESSAGE);
   const { refetch } = useQuery(GET_MESSAGE);
 
   const onSubmit = async ({ from, to, message }) => {
-    const res = await addMessage({
+    await addMessage({
       variables: { from, to, message }
     });
 
-    refetch();
+    await refetch();
 
-    console.log(res);
+    reset();
   };
 
   return (

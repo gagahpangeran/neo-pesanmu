@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_MESSAGE } from "../gql/message.graphql";
 
 export default function Messages() {
-  const { data, loading } = useQuery(GET_MESSAGE, {
+  const { data, loading, error } = useQuery(GET_MESSAGE, {
     fetchPolicy: "network-only"
   });
 
@@ -12,7 +12,7 @@ export default function Messages() {
     return <>Loading...</>;
   }
 
-  if (data === undefined) {
+  if (data === undefined || error) {
     return <>Error</>;
   }
 
