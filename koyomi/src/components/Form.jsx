@@ -1,18 +1,21 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation, useQuery } from "@apollo/react-hooks";
 
-import { ADD_MESSAGE } from "../gql/message.graphql";
+import { ADD_MESSAGE, GET_MESSAGE } from "../gql/message.graphql";
 
 export default function Form() {
   const { handleSubmit, register } = useForm();
 
   const [addMessage] = useMutation(ADD_MESSAGE);
+  const { refetch } = useQuery(GET_MESSAGE);
 
   const onSubmit = async ({ from, to, message }) => {
     const res = await addMessage({
       variables: { from, to, message }
     });
+
+    refetch();
 
     console.log(res);
   };

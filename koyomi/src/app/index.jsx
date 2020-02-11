@@ -1,7 +1,7 @@
 import React from "react";
 import { ApolloProvider } from "@apollo/react-hooks";
 
-import ApolloClient from "../utils/apollo";
+import ApolloClient from "../apollo";
 import Form from "../components/Form";
 import Messages from "../components/Messages";
 
