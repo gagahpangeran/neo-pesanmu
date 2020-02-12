@@ -10,4 +10,4 @@ RUN yarn
 COPY --chown=node:node . .
 
 EXPOSE 9000
-CMD ["node", "src/index.js"]
+CMD ["yarn", "start"]
