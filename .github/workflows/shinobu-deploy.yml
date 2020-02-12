@@ -1,0 +1,19 @@
+name: Deploy Shinobu
+
+on:
+  push:
+    paths: 
+      - 'shinobu/**'
+
+jobs:
+  build:
+    name: Deploy Shinobu
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        script: cd neo-pesanmu/shinobu && git pull && docker-compose up -d --build
