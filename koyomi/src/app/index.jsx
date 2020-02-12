@@ -11,9 +11,14 @@ function App() {
   return (
     <ApolloProvider client={ApolloClient}>
       <div className="wrapper">
-        <h1>Neo Pesanmu</h1>
+        <header>
+          <h1>Neo Pesanmu</h1>
+        </header>
         <Form />
         <Messages />
+        <footer>
+          <h5>&copy; {new Date().getFullYear()} GPR</h5>
+        </footer>
       </div>
     </ApolloProvider>
   );
