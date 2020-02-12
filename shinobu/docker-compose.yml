@@ -12,6 +12,7 @@ services:
       - "9000:9000"
     links:
       - db
+    env_file: .env
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
