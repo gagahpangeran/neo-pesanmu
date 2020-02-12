@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sky-blue: #e3f6f5;
+  --white: #fffffe;
+  --dark-blue: #272343;
+  --yellow: #ffd803;
+}
+
+body {
+  background: var(--sky-blue);
+}

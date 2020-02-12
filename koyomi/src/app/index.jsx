@@ -5,11 +5,16 @@ import ApolloClient from "../apollo";
 import Form from "../components/Form";
 import Messages from "../components/Messages";
 
+import "../styles/app.css";
+
 function App() {
   return (
     <ApolloProvider client={ApolloClient}>
-      <Form />
-      <Messages />
+      <div className="wrapper">
+        <h1>Neo Pesanmu</h1>
+        <Form />
+        <Messages />
+      </div>
     </ApolloProvider>
   );
 }
