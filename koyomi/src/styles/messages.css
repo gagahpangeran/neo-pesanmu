@@ -1,0 +1,24 @@
+.kym-box,
+.kym-message {
+  background: var(--white);
+  padding: 32px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 2px solid var(--dark-blue);
+}
+
+.kym-box {
+  font-weight: bold;
+  text-align: center;
+}
+
+.kym-message {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.kym-message p {
+  margin: 12px 0;
+  white-space: pre-wrap;
+}
