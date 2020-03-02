@@ -1,3 +1,3 @@
-const { REACT_APP_GRAPHQL: GRAPHQL } = process.env;
+const { REACT_APP_GRAPHQL: GRAPHQL, REACT_APP_SENTRY: SENTRY } = process.env;
 
-export { GRAPHQL };
+export { GRAPHQL, SENTRY };

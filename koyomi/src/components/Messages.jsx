@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
+import { captureException } from "@sentry/browser";
 
 import { GET_MESSAGE } from "../gql/message.graphql";
 
@@ -15,6 +16,7 @@ export default function Messages() {
   }
 
   if (data === undefined || error) {
+    captureException(error);
     return <div className="kym-box">Error, something went wrong.</div>;
   }
 
