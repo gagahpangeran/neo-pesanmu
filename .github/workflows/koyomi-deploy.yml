@@ -15,6 +15,10 @@ jobs:
         with:
           node-version: "12.x"
 
+      - name: Create env
+        working-directory: koyomi
+        run: echo ${{ secrets.ENV_GRAPHQL }} > .env && echo ${{ secrets.ENV_SENTRY }} >> .env
+
       - name: Install dependencies
         working-directory: koyomi
         run: yarn
@@ -31,3 +35,7 @@ jobs:
         with:
           args: deploy --dir=koyomi/build --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
+      - name: Delete env
+        working-directory: koyomi
+        run: rm .env
